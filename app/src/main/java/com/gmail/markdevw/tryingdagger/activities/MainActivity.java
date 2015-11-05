@@ -11,7 +11,7 @@ import com.gmail.markdevw.tryingdagger.modules.PersonModule;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Person person;
+    Person person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         PersonComponent component = DaggerPersonComponent.builder().personModule(new PersonModule()).build();
-        person = component.providePerson();
+        person = component.person();
 
         person.sprint();
     }

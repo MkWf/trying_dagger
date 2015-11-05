@@ -11,5 +11,5 @@ import dagger.Component;
 
 @Component(modules = {PersonModule.class})
 public interface PersonComponent {
-    Person providePerson();
+    Person person();
 }

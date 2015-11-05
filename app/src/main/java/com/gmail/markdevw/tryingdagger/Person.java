@@ -24,4 +24,5 @@ public class Person {
     public void die(){
         heart.setBpm(0);
     }
+
 }
