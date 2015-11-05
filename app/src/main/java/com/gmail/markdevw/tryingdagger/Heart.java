@@ -15,4 +15,7 @@ public class Heart {
         mBeatsPerMinute = beatsPerMinute;
     }
 
+    public int getBpm() {
+        return mBeatsPerMinute;
+    }
 }

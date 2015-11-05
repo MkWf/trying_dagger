@@ -25,4 +25,8 @@ public class Person {
         heart.setBpm(0);
     }
 
+    @Override
+    public String toString() {
+        return "Your heartrate is " + heart.getBpm();
+    }
 }
