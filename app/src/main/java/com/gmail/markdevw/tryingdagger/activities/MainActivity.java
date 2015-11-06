@@ -9,7 +9,8 @@ import com.gmail.markdevw.tryingdagger.Person;
 import com.gmail.markdevw.tryingdagger.R;
 import com.gmail.markdevw.tryingdagger.components.DaggerPersonComponent;
 import com.gmail.markdevw.tryingdagger.components.PersonComponent;
-import com.gmail.markdevw.tryingdagger.modules.PersonModule;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.tv_greeting)
     TextView greeting;
 
+    @Inject
     Person person;
 
     @Override
@@ -29,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        PersonComponent component = DaggerPersonComponent.builder().personModule(new PersonModule()).build();
-        person = component.person();
+        PersonComponent component = DaggerPersonComponent.create();
+        component.inject(this);
 
         person.sprint();
     }

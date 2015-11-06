@@ -1,6 +1,7 @@
 package com.gmail.markdevw.tryingdagger.components;
 
 import com.gmail.markdevw.tryingdagger.Person;
+import com.gmail.markdevw.tryingdagger.activities.MainActivity;
 import com.gmail.markdevw.tryingdagger.modules.PersonModule;
 
 import dagger.Component;
@@ -11,5 +12,6 @@ import dagger.Component;
 
 @Component(modules = {PersonModule.class})
 public interface PersonComponent {
+    void inject(MainActivity mainActivity);
     Person person();
 }
